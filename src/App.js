@@ -1,16 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { Container, AppBar, Typography, Grow, Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import Posts from './components/Posts/Posts';
 import Form from './components/Form/Form';
 import { getPosts } from './actions/posts';
-import useStyles from './styles';
 import memories from './images/memories.png';
+
+const styles = {
+  appBar: {
+    borderRadius: '15px',
+    margin: '30px 0',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  heading: {
+    color: 'rgba(0, 183, 255, 1)',
+  },
+  image: {
+    marginLeft: '15px',
+  },
+};
 
 const App = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
-  const classes = useStyles();
 
   useEffect(() => {
     dispatch(getPosts());
@@ -18,9 +33,9 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
-      <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
+      <AppBar style={styles.appBar} position="static" color="inherit">
+        <Typography style={styles.heading} variant="h2" align="center">Memories</Typography>
+        <img style={styles.image} src={memories} alt="icon" height="60" />
       </AppBar>
       <Grow in>
         <Container>

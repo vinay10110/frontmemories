@@ -1,0 +1,23 @@
+.root {
+  /* Applies margin to all MuiTextField-root elements */
+  margin: 8px; /* Assuming theme.spacing(1) is equivalent to 8px */
+}
+
+.paper {
+  padding: 16px; /* Assuming theme.spacing(2) is equivalent to 16px */
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fileInput {
+  width: 97%;
+  margin: 10px 0;
+}
+
+.buttonSubmit {
+  margin-bottom: 10px;
+}
